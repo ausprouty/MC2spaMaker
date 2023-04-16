@@ -111,9 +111,9 @@ In Gradle Scripts
 check to see that variables.gradle is
 
 ext {
-    minSdkVersion = 23  // i show22
-    compileSdkVersion = 33
-    targetSdkVersion = 28 // is show33
+    minSdkVersion = 23  // can only go this low
+    compileSdkVersion = 33 // needed to compile
+    targetSdkVersion = 32 // as high as capacitor hoes
     androidxActivityVersion = '1.4.0'
     androidxAppCompatVersion = '1.4.2'
     androidxCoordinatorLayoutVersion = '1.2.0'
@@ -174,4 +174,6 @@ PRODUCTION:
 npm run build
 npx cap sync
 npx cap open android
+
+
 Build -> Build APK

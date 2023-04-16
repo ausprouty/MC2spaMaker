@@ -2,7 +2,9 @@ import { CapacitorSQLite, SQLiteConnection } from "@capacitor-community/sqlite";
 
 export default {
 	async notes (route){
+		localStorage.removeItem('mc2NoteSourceSpa')
 		var source = await this.getDataSource()
+		alert ('after getDataSource we see ' + source)
 		var data = []
 		if (source == 'database'){
 			data =  await this.notesFromDatabase(route)
@@ -173,6 +175,7 @@ export default {
 			await sqlite.closeConnection("db_notes_spa");
 			localStorage.setItem('mc2NoteSourceSpa', 'database')
 		} catch (err) {
+			console.log(`Error: ${err}`);
 			localStorage.setItem('mc2NoteSourceSpa', 'localstorage')
 		}
 		return localStorage.getItem('mc2NoteSourceSpa')
