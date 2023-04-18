@@ -4,7 +4,7 @@ export default {
 	async notes (route){
 		localStorage.removeItem('mc2NoteSourceSpa')
 		var source = await this.getDataSource()
-		alert ('after getDataSource we see ' + source)
+		console.log ('after getDataSource we see ' + source)
 		var data = []
 		if (source == 'database'){
 			data =  await this.notesFromDatabase(route)

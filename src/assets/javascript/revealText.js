@@ -8,16 +8,16 @@ export function useFindCollapsible() {
     coll[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
+      console.log (content.style.display);
       if (content.style.display === "block") {
         content.style.display = "none";
-        //this.className= "collapsible";
         this.classList.remove("revealed");
-        this.classList.add("collapsible");
+        console.log (this.classList);
       } else {
+        content.classList.remove('collapsed')
         content.style.display = "block";
-        //this.className= "revealed";
-        this.classList.remove("collapsible");
         this.classList.add("revealed");
+        console.log (this.classList);
       }
     });
   }
